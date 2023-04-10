@@ -309,8 +309,11 @@ app.get('/findroute',(req,res)=>{
           f = 60
           cf = [48,54]
           }
-     
-        res.render('home',{newPath,search_List,to,from,d,t,f,cf})
+        let gateInfo = [station[toNum].gate,station[fromNum].gate]
+        let scolor = newPath[1][0][3]
+        let ecolor = station[toNum].line[0]
+        // console.log(scolor,ecolor,newPath)
+        res.render('home',{newPath,search_List,to,from,d,t,f,cf,gateInfo,scolor,ecolor})
       })
       
 
@@ -342,7 +345,10 @@ app.get('/',(req,res)=>{
     let t = 0
     let f = 0
     let cf = [0,0]
-  res.render('home',{newPath,search_List,to,from,d,t,f,cf})
+    let gateInfo = [{},{}]
+    let scolor = ''
+    let ecolor =''
+  res.render('home',{newPath,search_List,to,from,d,t,f,cf,gateInfo,scolor,ecolor})
   })
 
 })

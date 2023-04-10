@@ -14,7 +14,6 @@ def find(src,n):
                 dist[i] = d+w
                 heapq.heappush(q,(dist[i],i))
     return dist
-
 adj = [
     [[1,1],[2,2]],
     [[0,1],[3,3],[6,4]],
@@ -26,11 +25,8 @@ adj = [
     [[5,4],[6,5]]
 ]
 def findPath(i,e,tans,c,d,ans,visited):
-    
     if i==e:
-        
         if c==d:
-            
             ans.append(tans[:])
         return
     # print('i== ',i)
@@ -39,7 +35,6 @@ def findPath(i,e,tans,c,d,ans,visited):
             visited[j] = True
             findPath(j,e,tans+[j],c+w,d,ans,visited)
             visited[j] = False
-
 def printPath(s,e,n):
     dist = find(s,n)
     sortd = dist[e]

@@ -136,17 +136,7 @@ function printPath(s, e, n, adj) {
 
     return [ans, sortd]
 }
-// let pq = new PriorityQueue()
-// adj = [
-//     [[1,1],[2,2]],
-//     [[0,1],[3,3],[6,4]],
-//     [[0,2],[5,1],[4,2]],
-//     [[1,3],[5,1]],
-//     [[3,2],[6,3]],
-//     [[3,1],[7,4],[2,1]],
-//     [[4,3],[1,4],[7,5]],
-//     [[5,4],[6,5]]
-// ]
+
 function final(parcel) {
     // console.log(parcel)
     let path = parcel[0][0]
@@ -204,7 +194,7 @@ function final(parcel) {
             // console.log(tarr)
         }
         newPath.push(tarr)
-        console.log(newPath)
+        // console.log(newPath)
     })
 }
 fs.readFile('./graphc.json', 'utf-8', (err, arr) => {
@@ -217,12 +207,5 @@ fs.readFile('./graphc.json', 'utf-8', (err, arr) => {
     // console.log(adj)
     let parcel = printPath(8, 42, adj.length, adj)
     return final(parcel)
-    // let ans = parcel[0]
-    // let dist = parcel[1]
-    // var a = 0
-    // for (let i=0;i<ans[0].length;i++){
-
-    //     console.log(station[ans[0][i]].name,station[ans[0][i]].dist)
-    // }
-    // console.log(dist)
+    
 })
